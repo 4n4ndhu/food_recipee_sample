@@ -4,4 +4,6 @@ class ColorConstants {
   static const Color primaryColor = Color(0xffE23E3E);
   static const Color lightgrey = Color(0xffc1c1c1);
   static const Color lightblack = Color(0xff303030);
+  static const Color neutral = Color(0xffA9A9A9);
+  static const Color PupulatContainer = Color(0xF1F1F1);
 }

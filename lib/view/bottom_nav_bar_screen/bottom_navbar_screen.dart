@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_recipee_sample/utils/constants/color_constants.dart';
 import 'package:food_recipee_sample/view/home_screen/home_screen.dart';
 
 class BottomNavbarScreen extends StatefulWidget {
@@ -28,7 +29,11 @@ class _BottomNavbarScreenState extends State<BottomNavbarScreen> {
       body: screens[selected],
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: CircleAvatar(
-        child: Text("+"),
+        backgroundColor: ColorConstants.primaryColor,
+        child: Text(
+          "+",
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: selected,

@@ -1,58 +1,120 @@
-
 import 'package:flutter/material.dart';
 import 'package:food_recipee_sample/utils/constants/color_constants.dart';
 
 class CustomVideoCard extends StatelessWidget {
-  const CustomVideoCard({
-    super.key,
-  });
+  String backgroundImage;
+  String rating;
+  String caption;
+  String dpImage;
+  String name;
+  String duration;
+
+  CustomVideoCard(
+      {required this.rating,
+      required this.backgroundImage,
+      required this.caption,
+      required this.dpImage,
+      required this.name,
+      required this.duration});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 180,
+    return SizedBox(
       width: 280,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          color: Colors.red,
-          image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(
-                  "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=600"))),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 8, top: 8),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: ColorConstants.lightblack.withOpacity(.3),
+          Container(
+            height: 180,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.red,
+                image: DecorationImage(
+                    fit: BoxFit.cover, image: NetworkImage(backgroundImage))),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
+                  child: Row(
+                    children: [
+                      Container(
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.star,
+                              size: 14,
+                              color: Colors.white,
+                            ),
+                            Text(
+                              rating,
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.white),
+                            )
+                          ],
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: ColorConstants.lightblack.withOpacity(.3),
+                        ),
+                        height: 28,
+                        width: 58,
+                      ),
+                      Spacer(),
+                      CircleAvatar(
+                        child: Icon(Icons.bookmark_outline),
+                      )
+                    ],
                   ),
-                  height: 28,
-                  width: 58,
                 ),
+                CircleAvatar(),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 8, bottom: 8),
+                    child: Container(
+                      child: Center(
+                          child: Text(
+                        duration,
+                        style: TextStyle(color: Colors.white),
+                      )),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: ColorConstants.lightblack.withOpacity(.3),
+                      ),
+                      height: 26,
+                      width: 42,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                caption,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
-              Spacer(),
-              Padding(
-                padding: const EdgeInsets.only(right: 8, top: 8),
-                child: CircleAvatar(),
-              )
+              Icon(Icons.more_horiz)
             ],
           ),
-          CircleAvatar(),
-          Align(
-            alignment: Alignment.bottomRight,
-            child: Padding(
-              padding: const EdgeInsets.only(right: 8, bottom: 8),
-              child: Container(
-                height: 26,
-                width: 42,
-                color: ColorConstants.lightblack.withOpacity(.3),
+          Row(
+            children: [
+              CircleAvatar(
+                radius: 16,
+                backgroundImage: NetworkImage(dpImage),
               ),
-            ),
+              SizedBox(
+                width: 7,
+              ),
+              Text(
+                name,
+                style: TextStyle(color: ColorConstants.neutral),
+              )
+            ],
           )
         ],
       ),

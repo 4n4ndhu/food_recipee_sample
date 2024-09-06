@@ -1,31 +1,110 @@
 import 'package:flutter/material.dart';
+import 'package:food_recipee_sample/dummyDb.dart';
 import 'package:food_recipee_sample/utils/constants/color_constants.dart';
 import 'package:food_recipee_sample/view/global_widget/custom_video_card.dart';
+import 'package:food_recipee_sample/view/home_screen/widget/popular_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
+    return DefaultTabController(
+      length: 5,
+      initialIndex: 1,
+      child: Scaffold(
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                // #title - section 1
+                _titlesection(),
+                _trendingNowSection(),
+                _popularSection(),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  SizedBox _popularSection() {
+    return SizedBox(
+      height: 353,
+      child: Padding(
+        padding: const EdgeInsets.only(left: 20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // #title - section 1
-            _titlesection(),
-            _trendingNowSection()
+            Padding(
+              padding: const EdgeInsets.only(top: 12, bottom: 16),
+              child: Text(
+                "popular category",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600),
+              ),
+            ),
+            Container(
+              height: 34,
+              width: 387,
+              child: TabBar(
+                  isScrollable: true,
+                  tabAlignment: TabAlignment.start,
+                  labelColor: Colors.white,
+                  unselectedLabelColor: ColorConstants.primaryColor,
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  // indicatorColor: Colors.red,
+                  indicator: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: ColorConstants.primaryColor),
+                  dividerColor: Colors.transparent,
+                  tabs: [
+                    Tab(
+                      child: Text("salad"),
+                    ),
+                    Tab(
+                      child: Text("Breakfast"),
+                    ),
+                    Tab(
+                      child: Text("Apetizer"),
+                    ),
+                    Tab(
+                      child: Text("noodle"),
+                    ),
+                    Tab(
+                      child: Text("Lunch"),
+                    ),
+                  ]),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+              height: 231,
+              child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => popularCard(),
+                  separatorBuilder: (context, index) => SizedBox(
+                        width: 16,
+                      ),
+                  itemCount: 5),
+            )
           ],
         ),
       ),
     );
   }
 
-  Column _trendingNowSection() {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20, top: 12),
-          child: Row(
+  Padding _trendingNowSection() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 20, top: 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
             children: [
               Text(
                 "Trending Now 🔥",
@@ -49,13 +128,28 @@ class HomeScreen extends StatelessWidget {
               )
             ],
           ),
-        ),
-        SizedBox(
-          height: 16,
-        ),
-        CustomVideoCard(),
-        CustomVideoCard(),
-      ],
+          SizedBox(
+            height: 16,
+          ),
+          SizedBox(
+            height: 256,
+            child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => CustomVideoCard(
+                      duration: Dummydb.data[index]["duration"],
+                      caption: Dummydb.data[index]["caption"],
+                      backgroundImage: Dummydb.data[index]["backgroundImg"],
+                      dpImage: Dummydb.data[index]["dpImage"],
+                      rating: Dummydb.data[index]["rating"],
+                      name: Dummydb.data[index]["name"],
+                    ),
+                separatorBuilder: (context, index) => SizedBox(
+                      width: 16,
+                    ),
+                itemCount: Dummydb.data.length),
+          ),
+        ],
+      ),
     );
   }
 
