@@ -3,6 +3,8 @@ import 'package:food_recipee_sample/dummyDb.dart';
 import 'package:food_recipee_sample/utils/constants/color_constants.dart';
 import 'package:food_recipee_sample/view/global_widget/custom_video_card.dart';
 import 'package:food_recipee_sample/view/home_screen/widget/popular_card.dart';
+import 'package:food_recipee_sample/view/home_screen/widget/popular_creator_widget.dart';
+import 'package:food_recipee_sample/view/home_screen/widget/recent_recipee_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -21,9 +23,113 @@ class HomeScreen extends StatelessWidget {
                 _titlesection(),
                 _trendingNowSection(),
                 _popularSection(),
+                _RecentRecipeSection(),
+                _PopularCreatorsSection(),
+                SizedBox(
+                  height: 12,
+                )
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  Padding _PopularCreatorsSection() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 20, right: 19),
+      child: SizedBox(
+        height: 187,
+        width: 375,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 20, top: 12, bottom: 16),
+              child: Row(
+                children: [
+                  Text(
+                    "Popular creators",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                  Spacer(),
+                  Text(
+                    "See All",
+                    style: TextStyle(
+                        color: Colors.red,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14),
+                  ),
+                  SizedBox(width: 8),
+                  Icon(
+                    Icons.arrow_forward,
+                    color: Colors.red,
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 119,
+              child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => PopularCreatorCard(),
+                  separatorBuilder: (context, index) => SizedBox(width: 12),
+                  itemCount: 4),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Padding _RecentRecipeSection() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 20),
+      child: SizedBox(
+        height: 259,
+        width: 375,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 20, top: 12),
+              child: Row(
+                children: [
+                  Text(
+                    "Recent recipe",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                  Spacer(),
+                  Text(
+                    "See All",
+                    style: TextStyle(
+                        color: Colors.red,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14),
+                  ),
+                  SizedBox(width: 8),
+                  Icon(
+                    Icons.arrow_forward,
+                    color: Colors.red,
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            SizedBox(
+              height: 191,
+              child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => RecentRecipeWidget(),
+                  separatorBuilder: (context, index) => SizedBox(
+                        width: 16,
+                      ),
+                  itemCount: 5),
+            )
+          ],
         ),
       ),
     );

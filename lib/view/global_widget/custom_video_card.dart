@@ -68,7 +68,14 @@ class CustomVideoCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                CircleAvatar(),
+                CircleAvatar(
+                  backgroundColor: Color(0xff303030).withOpacity(.3),
+                  radius: 24,
+                  child: Icon(
+                    Icons.play_arrow_rounded,
+                    color: Colors.white,
+                  ),
+                ),
                 Align(
                   alignment: Alignment.bottomRight,
                   child: Padding(

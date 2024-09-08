@@ -59,7 +59,7 @@ class popularCard extends StatelessWidget {
                 width: 150,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color: Color(0xffAAAAAA))),
+                    color: ColorConstants.PopularContainer.withOpacity(1))),
           ),
         ),
         Positioned(

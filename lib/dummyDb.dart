@@ -3,7 +3,7 @@ class Dummydb {
     {
       "name": "By Alice",
       "rating": "4.5",
-      "caption": "Excellent work!",
+      "caption": "Healthy vegitable salad",
       'backgroundImg':
           'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600',
       'dpImage':
@@ -13,7 +13,7 @@ class Dummydb {
     {
       'name': 'By Bob',
       'rating': '3.8',
-      'caption': 'Good effort.',
+      'caption': 'strawberry pudding',
       'backgroundImg':
           'https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600',
       'dpImage':
@@ -23,7 +23,7 @@ class Dummydb {
     {
       'name': 'By Charlie',
       'rating': '5.0',
-      'caption': 'Outstanding performance!',
+      'caption': 'Mixed fruit Salad',
       'backgroundImg':
           'https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=600',
       'dpImage':
@@ -33,7 +33,7 @@ class Dummydb {
     {
       'name': 'By Diana',
       'rating': '4.2',
-      'caption': 'Very satisfactory.',
+      'caption': 'Veg Noodles.',
       'backgroundImg':
           'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600',
       'dpImage':
@@ -43,7 +43,7 @@ class Dummydb {
     {
       'name': 'By Evan',
       'rating': '4.8',
-      'caption': 'Exceptional work!',
+      'caption': 'Italian Chicken dinner',
       'backgroundImg':
           'https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=600',
       'dpImage':
@@ -53,7 +53,7 @@ class Dummydb {
     {
       'name': 'By Fiona',
       'rating': '3.9',
-      'caption': 'Good job, but could be better.',
+      'caption': 'Veg Salad',
       'backgroundImg':
           'https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=600',
       'dpImage':
@@ -63,7 +63,7 @@ class Dummydb {
     {
       'name': 'By George',
       'rating': '4.7',
-      'caption': 'Very impressive.',
+      'caption': 'Tuna fishy fry',
       'backgroundImg':
           'https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&w=600',
       'dpImage':
@@ -73,7 +73,7 @@ class Dummydb {
     {
       'name': 'By Hannah',
       'rating': '4.1',
-      'caption': 'Consistently reliable.',
+      'caption': 'Chicken chopps',
       'backgroundImg':
           'https://images.pexels.com/photos/718742/pexels-photo-718742.jpeg?auto=compress&cs=tinysrgb&w=600',
       'dpImage':
