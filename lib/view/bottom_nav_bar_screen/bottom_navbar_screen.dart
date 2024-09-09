@@ -13,7 +13,7 @@ class BottomNavbarScreen extends StatefulWidget {
 class _BottomNavbarScreenState extends State<BottomNavbarScreen> {
   List screens = [
     HomeScreen(),
-   BookmarkScreen(),
+    BookmarkScreen(),
     Container(
       color: Colors.blue,
     ),

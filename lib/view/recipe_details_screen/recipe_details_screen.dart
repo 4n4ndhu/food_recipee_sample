@@ -1,59 +1,97 @@
 import 'package:flutter/material.dart';
+import 'package:food_recipee_sample/utils/constants/color_constants.dart';
+import 'package:food_recipee_sample/view/recipe_details_screen/widget/recipe_detail_widget.dart';
 
 class RecipeDetailsScreen extends StatelessWidget {
   String recipeTitle;
-  RecipeDetailsScreen({super.key, required this.recipeTitle});
+  String recipeImage;
+  String creatorImage;
+  String creatorName;
+  String recipeRating;
+  String creatorLocation;
+
+  RecipeDetailsScreen({
+    super.key,
+    required this.recipeTitle,
+    required this.recipeImage,
+    required this.creatorImage,
+    required this.creatorName,
+    required this.recipeRating,
+    required this.creatorLocation,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [Icon(Icons.more_horiz)],
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 12, left: 20),
-            child: Text(
-              recipeTitle,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
-            ),
-          ),
-          Padding(
-            padding:
-                const EdgeInsets.only(left: 20, right: 20, top: 12, bottom: 14),
-            child: SizedBox(
-              height: 320,
-              width: 375,
-              child: Column(
-                children: [
-                  Container(
-                    color: Colors.red,
-                    height: 223,
-                    width: 335,
-                  ),
-                  SizedBox(height: 16),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.star,
-                        color: Colors.yellow,
-                      ),
-                      Text(
-                        "4.5",
-                        style: TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w600),
-                      ),
-                      Text("")
-                    ],
-                  )
-                ],
-              ),
-            ),
+        actions: [
+          Icon(Icons.more_horiz),
+          SizedBox(
+            width: 20,
           )
         ],
       ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [_recipeTitleSection(), _IngredientsSection()],
+        ),
+      ),
+    );
+  }
+
+  Padding _IngredientsSection() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+      child: SizedBox(
+        height: 496,
+        width: 375,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Text(
+                  "Ingredients",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 20),
+                ),
+                Spacer(),
+                Text(
+                  "data",
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                      color: ColorConstants.neutral),
+                )
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Column _recipeTitleSection() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(bottom: 12, left: 20),
+          child: Text(
+            recipeTitle,
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+          ),
+        ),
+        RecipeDetailCard(
+          recipeImage: recipeImage,
+          creatorImage: creatorImage,
+          creatorName: creatorName,
+          recipeRating: recipeRating,
+          creatorLocation: creatorLocation,
+        )
+      ],
     );
   }
 }
