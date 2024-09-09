@@ -31,6 +31,16 @@ class RecipeDetailCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
+                child: Center(
+                  child: CircleAvatar(
+                    backgroundColor: Color(0xff303030).withOpacity(.3),
+                    radius: 24,
+                    child: Icon(
+                      Icons.play_arrow_rounded,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     image: DecorationImage(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_recipee_sample/dummyDb.dart';
 import 'package:food_recipee_sample/utils/constants/color_constants.dart';
+import 'package:food_recipee_sample/view/global_widget/incredient_Card_widget.dart';
 import 'package:food_recipee_sample/view/recipe_details_screen/widget/recipe_detail_widget.dart';
 
 class RecipeDetailsScreen extends StatelessWidget {
@@ -58,15 +60,47 @@ class RecipeDetailsScreen extends StatelessWidget {
                       fontSize: 20),
                 ),
                 Spacer(),
-                Text(
-                  "data",
-                  style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.normal,
-                      color: ColorConstants.neutral),
+                Row(
+                  children: [
+                    Text(
+                      Dummyincredient.incredientdata.length.toString(),
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: ColorConstants.neutral),
+                    ),
+                    SizedBox(
+                      width: 4,
+                    ),
+                    Text(
+                      "Item",
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: ColorConstants.neutral),
+                    )
+                  ],
                 )
               ],
             ),
+            SizedBox(height: 16),
+            SizedBox(
+              child: ListView.separated(
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) => IncredientCardWidget(
+                        incredientImage: Dummyincredient.incredientdata[index]
+                            ["incredientImage"],
+                        incredientName: Dummyincredient.incredientdata[index]
+                            ["incredientName"],
+                        incredientQuantity: Dummyincredient
+                            .incredientdata[index]["incredientQuantity"],
+                      ),
+                  separatorBuilder: (context, index) => SizedBox(
+                        height: 12,
+                      ),
+                  itemCount: Dummyincredient.incredientdata.length),
+            )
           ],
         ),
       ),

@@ -92,5 +92,36 @@ class Dummydb {
 }
 
 class Dummyincredient {
-  List incredientdata = [];
+  static List incredientdata = [
+    {
+      "incredientName": "Tomato",
+      "incredientImage":
+          "https://images.pexels.com/photos/53588/tomatoes-vegetables-food-frisch-53588.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "incredientQuantity": "200g",
+    },
+    {
+      "incredientName": "Cucumber",
+      "incredientImage":
+          "https://media.istockphoto.com/id/895071966/photo/raw-green-cucumbers.jpg?b=1&s=612x612&w=0&k=20&c=dr-VPdMhQzlF8qovRIvYH8_wREaS5GImlq6NCxCPwPw=",
+      "incredientQuantity": "150g"
+    },
+    {
+      "incredientName": "Red Onion",
+      "incredientImage":
+          "https://images.pexels.com/photos/7456550/pexels-photo-7456550.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "incredientQuantity": "50g"
+    },
+    {
+      "incredientName": "Carrot",
+      "incredientImage":
+          "https://images.pexels.com/photos/3650647/pexels-photo-3650647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "incredientQuantity": "80g"
+    },
+    {
+      "incredientName": "Lettuce",
+      "incredientImage":
+          "https://images.pexels.com/photos/1352199/pexels-photo-1352199.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "incredientQuantity": "100g"
+    },
+  ];
 }
