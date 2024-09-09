@@ -242,6 +242,7 @@ class HomeScreen extends StatelessWidget {
             child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => CustomVideoCard(
+                      onCardTaped: () {},
                       duration: Dummydb.data[index]["duration"],
                       caption: Dummydb.data[index]["caption"],
                       backgroundImage: Dummydb.data[index]["backgroundImg"],
