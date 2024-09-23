@@ -22,7 +22,7 @@ class IncredientCardWidget extends StatelessWidget {
           color: ColorConstants.neutral.withOpacity(.4),
           borderRadius: BorderRadius.circular(15)),
       height: 76,
-      width: 335,
+      width: double.infinity,
       child: Row(
         children: [
           Container(

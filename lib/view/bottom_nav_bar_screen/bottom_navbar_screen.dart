@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipee_sample/utils/constants/color_constants.dart';
 import 'package:food_recipee_sample/view/bookmark_screen/bookmark_screen.dart';
+import 'package:food_recipee_sample/view/create_recipe_screen/create_recipe_screen.dart';
 import 'package:food_recipee_sample/view/home_screen/home_screen.dart';
 
 class BottomNavbarScreen extends StatefulWidget {
@@ -27,12 +28,17 @@ class _BottomNavbarScreenState extends State<BottomNavbarScreen> {
     return Scaffold(
       body: screens[selected],
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: CircleAvatar(
-        backgroundColor: ColorConstants.primaryColor,
-        child: Text(
-          "+",
-          style: TextStyle(color: Colors.white),
-        ),
+      floatingActionButton: FloatingActionButton(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        backgroundColor: Colors.red,
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CreateRecipeScreen(),
+              ));
+        },
+        child: Icon(Icons.add),
       ),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: selected,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipee_sample/utils/constants/color_constants.dart';
+import 'package:food_recipee_sample/view/global_widget/cutom_button.dart';
 
 class RecipeDetailCard extends StatelessWidget {
   String recipeImage;
@@ -117,22 +118,8 @@ class RecipeDetailCard extends StatelessWidget {
                         ],
                       ),
                       Spacer(),
-                      Container(
-                        child: Center(
-                          child: Text(
-                            "Follow",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ),
-                        height: 36,
-                        width: 77,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: ColorConstants.primaryColor,
-                        ),
+                      CustomButton(
+                        text: 'Follow',
                       ),
                     ],
                   ))

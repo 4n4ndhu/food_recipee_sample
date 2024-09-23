@@ -44,65 +44,61 @@ class RecipeDetailsScreen extends StatelessWidget {
   Padding _IngredientsSection() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-      child: SizedBox(
-        height: 496,
-        width: 375,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Text(
-                  "Ingredients",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 20),
-                ),
-                Spacer(),
-                Row(
-                  children: [
-                    Text(
-                      Dummyincredient.incredientdata.length.toString(),
-                      style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                          color: ColorConstants.neutral),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Text(
+                "Ingredients",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20),
+              ),
+              Spacer(),
+              Row(
+                children: [
+                  Text(
+                    Dummyincredient.incredientdata.length.toString(),
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                        color: ColorConstants.neutral),
+                  ),
+                  SizedBox(
+                    width: 4,
+                  ),
+                  Text(
+                    "Item",
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                        color: ColorConstants.neutral),
+                  )
+                ],
+              )
+            ],
+          ),
+          SizedBox(height: 16),
+          SizedBox(
+            child: ListView.separated(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemBuilder: (context, index) => IncredientCardWidget(
+                      incredientImage: Dummyincredient.incredientdata[index]
+                          ["incredientImage"],
+                      incredientName: Dummyincredient.incredientdata[index]
+                          ["incredientName"],
+                      incredientQuantity: Dummyincredient.incredientdata[index]
+                          ["incredientQuantity"],
                     ),
-                    SizedBox(
-                      width: 4,
+                separatorBuilder: (context, index) => SizedBox(
+                      height: 12,
                     ),
-                    Text(
-                      "Item",
-                      style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                          color: ColorConstants.neutral),
-                    )
-                  ],
-                )
-              ],
-            ),
-            SizedBox(height: 16),
-            SizedBox(
-              child: ListView.separated(
-                  physics: NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) => IncredientCardWidget(
-                        incredientImage: Dummyincredient.incredientdata[index]
-                            ["incredientImage"],
-                        incredientName: Dummyincredient.incredientdata[index]
-                            ["incredientName"],
-                        incredientQuantity: Dummyincredient
-                            .incredientdata[index]["incredientQuantity"],
-                      ),
-                  separatorBuilder: (context, index) => SizedBox(
-                        height: 12,
-                      ),
-                  itemCount: Dummyincredient.incredientdata.length),
-            )
-          ],
-        ),
+                itemCount: Dummyincredient.incredientdata.length),
+          )
+        ],
       ),
     );
   }

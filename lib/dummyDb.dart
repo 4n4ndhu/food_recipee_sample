@@ -123,5 +123,11 @@ class Dummyincredient {
           "https://images.pexels.com/photos/1352199/pexels-photo-1352199.jpeg?auto=compress&cs=tinysrgb&w=600",
       "incredientQuantity": "100g"
     },
+    {
+      "incredientName": "Lettuce",
+      "incredientImage":
+          "https://images.pexels.com/photos/1352199/pexels-photo-1352199.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "incredientQuantity": "100g"
+    },
   ];
 }
