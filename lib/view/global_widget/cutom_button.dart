@@ -4,11 +4,15 @@ import 'package:food_recipee_sample/utils/constants/color_constants.dart';
 class CustomButton extends StatelessWidget {
   final String text;
   final void Function()? onButtonPressed;
+  final double? height;
+  final double? width;
 
   const CustomButton({
     required this.text,
     this.onButtonPressed,
     super.key,
+    this.height,
+    this.width,
   });
 
   @override
@@ -16,6 +20,8 @@ class CustomButton extends StatelessWidget {
     return InkWell(
       onTap: onButtonPressed,
       child: Container(
+        height: height,
+        width: width,
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Center(
           child: Text(
