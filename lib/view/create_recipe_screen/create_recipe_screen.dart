@@ -36,49 +36,47 @@ class CreateRecipeScreen extends StatelessWidget {
 
   Padding _IncredientSection() {
     return Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Create recipe",
-                    style:
-                        TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  customIncredientTextField(),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  customIncredientTextField(),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  customIncredientTextField(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    "+ Add new Ingredient",
-                    style:
-                        TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  CustomButton(
-                    text: "Save my recipe",
-                    height: 54,
-                    width: double.infinity,
-                  ),
-                  SizedBox(
-                    height: 16,
-                  )
-                ],
-              ),
-            );
+      padding: const EdgeInsets.only(top: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Create recipe",
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+          ),
+          SizedBox(
+            height: 16,
+          ),
+          customIncredientTextField(),
+          SizedBox(
+            height: 16,
+          ),
+          customIncredientTextField(),
+          SizedBox(
+            height: 16,
+          ),
+          customIncredientTextField(),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            "+ Add new Ingredient",
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          CustomButton(
+            text: "Save my recipe",
+            height: 54,
+            width: double.infinity,
+          ),
+          SizedBox(
+            height: 16,
+          )
+        ],
+      ),
+    );
   }
 
   Column _CreateRecipeSection() {
@@ -155,6 +153,7 @@ class CreateRecipeScreen extends StatelessWidget {
           height: 16,
         ),
         IncredientCardWidget(
+            haveArrow: true,
             incredientImage: "",
             incredientName: "serves",
             incredientQuantity: "01"),
@@ -162,6 +161,7 @@ class CreateRecipeScreen extends StatelessWidget {
           height: 12,
         ),
         IncredientCardWidget(
+            haveArrow: true,
             incredientImage: "",
             incredientName: "Cook time",
             incredientQuantity: "45 min"),

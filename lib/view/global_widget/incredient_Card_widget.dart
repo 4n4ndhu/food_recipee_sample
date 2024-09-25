@@ -6,13 +6,14 @@ class IncredientCardWidget extends StatelessWidget {
   String incredientImage;
   String incredientName;
   String incredientQuantity;
+  final bool haveArrow;
 
-  IncredientCardWidget({
-    super.key,
-    required this.incredientImage,
-    required this.incredientName,
-    required this.incredientQuantity,
-  });
+  IncredientCardWidget(
+      {super.key,
+      required this.incredientImage,
+      required this.incredientName,
+      required this.incredientQuantity,
+      this.haveArrow = false});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +48,13 @@ class IncredientCardWidget extends StatelessWidget {
               style: TextStyle(
                   fontWeight: FontWeight.normal,
                   fontSize: 14,
-                  color: ColorConstants.neutral))
+                  color: ColorConstants.neutral)),
+          haveArrow
+              ? Padding(
+                  padding: const EdgeInsets.only(left: 8),
+                  child: Icon(Icons.arrow_forward_sharp),
+                )
+              : SizedBox()
         ],
       ),
     );
