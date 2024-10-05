@@ -3,6 +3,7 @@ import 'package:food_recipee_sample/utils/constants/color_constants.dart';
 import 'package:food_recipee_sample/view/bookmark_screen/bookmark_screen.dart';
 import 'package:food_recipee_sample/view/create_recipe_screen/create_recipe_screen.dart';
 import 'package:food_recipee_sample/view/home_screen/home_screen.dart';
+import 'package:food_recipee_sample/view/notification_screen/notification_screen.dart';
 import 'package:food_recipee_sample/view/profile_screen/profile_screen.dart';
 
 class BottomNavbarScreen extends StatefulWidget {
@@ -16,9 +17,7 @@ class _BottomNavbarScreenState extends State<BottomNavbarScreen> {
   List screens = [
     HomeScreen(),
     BookmarkScreen(),
-    Container(
-      color: Colors.blue,
-    ),
+    NotificationsScreen(),
     ProfileScreen()
   ];
   int selected = 0;
